@@ -2,7 +2,16 @@ import { useGLTF, useTexture } from "@react-three/drei";
 import { useEffect } from "react";
 import * as THREE from "three";
 
-export function IPhone(props) {
+type IphoneProps = {
+  item: {
+    title: string;
+    color: string[];
+    img: string;
+  };
+  size: string;
+  scale: number[];
+};
+export function IPhone(props: IphoneProps) {
   const { nodes, materials } = useGLTF("/models/scene.glb");
 
   const texture = useTexture(props.item.img);
